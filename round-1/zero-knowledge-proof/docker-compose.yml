@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    restart: always
+    environment:
+      - PORT=3000
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+      - traefik.http.services.zkp.loadbalancer.server.port=3000
+      - traefik.http.routers.zkp.rule=Host(`zkp.challenge.haruulzangi.mn`)
+      - traefik.http.routers.zkp.entrypoints=websecure
+      - traefik.http.routers.zkp.tls=true
