@@ -4,6 +4,6 @@ FROM golang:alpine
 WORKDIR /app
 
 COPY *.go ./
-RUN go build -o /app/server server.go
+RUN go build -o /app/server
 
 CMD [ "/app/server" ]
