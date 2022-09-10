@@ -17,7 +17,7 @@ How to play:
 2. Generate some random number x
 3. Compute y = g^x mod p (g = 3)
 
-Then the real game starts! There are 256 rounds in total, so please make sure to automate everything :)
+Then the real game starts! There are 64 rounds in total, so please make sure to automate everything :)
 For each round:
 1. Generate some random number 0 < r < p - 1
 2. Compute C = g^r mod p and send it to me
@@ -30,7 +30,7 @@ Problem B: compute value of (x + r) mod (p - 1)
 
 For more information: https://en.wikipedia.org/wiki/Zero-knowledge_proof#Discrete_log_of_a_given_value
 `
-	totalRounds = 256
+	totalRounds = 64
 )
 
 var (
