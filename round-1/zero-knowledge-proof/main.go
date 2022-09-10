@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"crypto/rand"
 	"fmt"
+	"log"
 	"math/big"
 	"net"
 	"os"
@@ -168,11 +169,13 @@ func main() {
 		panic(err)
 	}
 
+	log.Printf("Listening on %s\n", listener.Addr().String())
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
 			continue
 		}
+		log.Printf("New connection from %s\n", conn.RemoteAddr().String())
 		go session(conn)
 	}
 }
