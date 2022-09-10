@@ -3,7 +3,7 @@ FROM golang:alpine
 
 WORKDIR /app
 
-COPY *.go ./
+COPY *.go go.mod ./
 RUN go build -o /app/server
 
 CMD [ "/app/server" ]
