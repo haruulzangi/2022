@@ -15,7 +15,7 @@ y = pow(g, x, p)
 conn.sendlineafter(b'Give me your y: ', str(y).encode('ascii'))
 
 with log.progress('Solving challenge') as progress:
-	for i in range(256):
+	for i in range(64):
 		progress.status(f'Round {i}')
 		r = random.randint(2, p - 2)
 		C = pow(g, r, p)
