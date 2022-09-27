@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  blind-fools:
+    container_name: "blind-fools"
+    build: .
+    ports:
+      - "8777:8777"
+    restart: always

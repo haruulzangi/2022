@@ -1,0 +1,22 @@
+from hashlib import sha256
+
+hash_size = 256 // 8
+
+
+def byte_length(i):
+    return (i.bit_length() + 7) // 8
+
+
+def mgf1XOR(target: bytes, seed: bytes) -> bytes:
+    counter = 0
+    done = 0
+    out = list(target)
+    while done < len(out):
+        h = sha256(seed + counter.to_bytes(4, 'big')).digest()
+        i = 0
+        while i < len(h) and done < len(out):
+            out[done] ^= h[i]
+            done += 1
+            i += 1
+        counter += 1
+    return bytes(out)
