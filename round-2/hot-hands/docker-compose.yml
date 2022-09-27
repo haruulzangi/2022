@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  hot-hands:
+    container_name: "hot-hands"
+    build: .
+    ports:
+      - "8778:8777"
+    restart: always
