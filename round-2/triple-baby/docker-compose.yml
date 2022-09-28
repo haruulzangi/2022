@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  alice:
+    container_name: "alice"
+    build: ./alice
+    ports:
+      - "8779:8778"
+    restart: always
+  carol:
+    container_name: "carol"
+    build: ./carol
+    ports:
+      - "8780:8777"
+    restart: always

@@ -1,0 +1,2 @@
+PyJWT
+pycryptodome==3.15.0
