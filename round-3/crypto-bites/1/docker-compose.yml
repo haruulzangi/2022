@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  crypto-bites-1:
+    build: .
+    ports:
+      - "8777:8777"
+    restart: always
