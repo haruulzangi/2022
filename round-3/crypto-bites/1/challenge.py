@@ -64,7 +64,7 @@ class ServiceServerHandler(socketserver.BaseRequestHandler):
                     send_message(
                         self.request, encrypted_flag)
                 elif cmd == b'KEY':
-                    send_message(self.request, encryption_key)
+                    send_message(self.request, encryption_key.encode('ascii'))
                 elif cmd == b'CMD':
                     send_message(
                         self.request, 'openssl enc -aes-256-cbc -in flag.txt -out flag.txt.enc')
