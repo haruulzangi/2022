@@ -3,3 +3,4 @@
 
 # IDE files
 .vscode
+*/**/node_modules

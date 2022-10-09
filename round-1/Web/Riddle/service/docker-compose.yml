@@ -1,0 +1,6 @@
+services:
+  web:
+    build: .
+    restart: always
+    ports:
+      - "5069:5069"
