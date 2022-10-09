@@ -1,0 +1,24 @@
+{
+  "name": "lilpump",
+  "version": "0.0.1",
+  "description": "lulpump",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "websocket",
+    "sqli",
+    "sqlmap"
+  ],
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-ws": "^4.0.0",
+    "jade": "^1.11.0",
+    "jquery": "^3.1.1",
+    "mysql": "^2.10.2",
+    "path": "^0.12.7"
+  }
+}

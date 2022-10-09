@@ -1,0 +1,22 @@
+services:
+  lilpump:
+    build: ./web-service
+    depends_on:
+      - db  
+    environment:
+      - DATABASE_HOST=db
+    volumes:
+      - ./web-service/api:/app/api
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.lilpump.rule=Host(`lilpump.challenge.haruulzangi.mn`)"
+      - "traefik.http.routers.lilpump.entrypoints=websecure"
+      - "traefik.http.routers.lilpump.tls.certresolver=myresolver"
+    ports:
+      - "8156:8156"
+  db:
+    build: ./database-service
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - "3318:3306"

@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title Lil Pump
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/jquery-3.6.1.min.js')
+    script(src='/javascript/index.js')
+  body
+    h1 Lil Pump song list:
+    ul
+        each item in data
+            li
+                p #{item.SongId}) #{item.SongName}
+    p Search song:
+    input(type="text", placeholder="song name", id="songname")
+    br
+    p Result
+    #res-container
+    br
+    img.image(src='/' + 'pump.jpg', width=400, heigth=300 )
+    br
+    footer 
+        

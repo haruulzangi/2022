@@ -1,0 +1,30 @@
+/***CREATING ALL TABLES*/
+CREATE TABLE SONG (
+  SongId   INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  SongName        VARCHAR(100)                   NULL
+);
+
+/* INSERT DATA */
+INSERT INTO SONG (SongName)
+VALUES ('Gucci Gang');
+INSERT INTO SONG (SongName)
+VALUES ('D Rose');
+INSERT INTO SONG (SongName)
+VALUES ('ESSKEETIT');
+INSERT INTO SONG (SongName)
+VALUES ('Boss');
+INSERT INTO SONG (SongName)
+VALUES ('Flex Like Ouu');
+INSERT INTO SONG (SongName)
+VALUES ('Molly');
+INSERT INTO SONG (SongName)
+VALUES ('Iced Out');
+INSERT INTO SONG (SongName)
+VALUES ('Splurgin');
+
+CREATE TABLE FLAG (
+  flag        VARCHAR(100)                   NULL
+);
+
+INSERT INTO FLAG (flag)
+VALUES ('HZ{ZANGI_GANG_ZANGI_GANG_ZANGI_GANG}');
