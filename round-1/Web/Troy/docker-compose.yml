@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+        troy:
+            build: .
+            labels:
+              - "traefik.enable=true"
+              - "traefik.http.routers.troy.rule=Host(`troy.challenge.haruulzangi.mn`)"
+              - "traefik.http.routers.troy.entrypoints=websecure"
+              - "traefik.http.routers.troy.tls.certresolver=myresolver"
+            ports:
+              - "5023:5023"
