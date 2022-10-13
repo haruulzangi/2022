@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  fibonacci:
+    build: "."
+    container_name: "fibonacci"
+    ports:
+      - "57777:57777"
+    #labels:
+      #- "traefik.enable=true"
+      #- "traefik.http.routers.fibonacci.rule=Host(`fibonacci.challenge.haruulzangi.mn`)"
+      #- "traefik.http.routers.fibonacci.entrypoints=websecure"
+      #- "traefik.http.routers.fibonacci.tls.certresolver=myresolver"
+

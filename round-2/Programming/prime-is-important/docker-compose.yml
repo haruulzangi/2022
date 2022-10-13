@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  prime:
+    build: "."
+    container_name: "prime"
+    ports:
+      - "57778:57778"
+    #labels:
+      #- "traefik.enable=true"
+      #- "traefik.http.routers.prime.rule=Host(`prime.challenge.haruulzangi.mn`)"
+      #- "traefik.http.routers.prime.entrypoints=websecure"
+      #- "traefik.http.routers.prime.tls.certresolver=myresolver"
+
