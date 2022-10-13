@@ -1,0 +1,87 @@
+<section class="flex justify-center h-full flex-wrap flex-col content-center bg-gray-300">
+	<header class="text-center">
+		<h1 class="text-4xl text-left">Todo List</h1>
+		
+		<p class="mt-2 text-sm pl-16">From actionable meeting notes to inspiring project plans, kickstart team participation with a flexible workspace.</p>
+	</header>
+	<section class="mt-14">
+		 
+		<section id="content">
+			{{#if item}}
+			<div class="bg-gray-100 rounded-xl flex justify-between">
+					<div class="w-full p-4">
+						<p class="text-yellow-600 ml-2">Software testing</p>
+						<blockquote class="my-2"><p class="text-lg font-semibold">Assessing the functionality of a software program</p></blockquote>
+					</div>
+				</div>
+			<br>
+			<div class="bg-gray-100 rounded-xl flex justify-between">
+					<div class="w-full p-4">
+						<p class="text-yellow-600 ml-2">Demo session</p>
+						<blockquote class="my-2"><p class="text-lg font-semibold">Ask the team in charge of the project to screencast the app’s demo</p></blockquote>
+					</div>
+				</div>
+				<br>
+				<div class="bg-gray-100 rounded-xl flex justify-between">
+					<div class="w-full p-4">
+						<p class="text-yellow-600 ml-2">{{item}}</p>
+						<blockquote class="my-2"><p class="text-lg font-semibold">{{description}}</p></blockquote>
+					</div>
+				</div>
+			{{else}}	
+			<form onsubmit='return onSubmit(this)'>
+				<div class="mt-2">
+					<label>Item</label><br/>
+					<input type="text" name="item" class="w-full border border-black rounded outline-none p-2">
+				</div>
+				<div class="mt-2">
+					<label>Description</label><br/>
+					<textarea class="text-sm w-full border border-black rounded outline-none p-2"
+					placeholder="" name="description"
+					rows="5" 
+					></textarea>
+				</div>
+				<div class="mt-4 flex justify-end">
+					<button class="uppercase px-8 py-2 rounded border border-yellow-600 text-black-600 bg-yellow-400 max-w-max shadow-sm hover:shadow-lg" type="submit">Submit</button>
+				</div>
+			</form>
+			<br>
+			<div class="bg-gray-100 rounded-xl flex justify-between">
+					<div class="w-full p-4">
+						<p class="text-yellow-600 ml-2">Software testing</p>
+						<blockquote class="my-2"><p class="text-lg font-semibold">Assessing the functionality of a software program</p></blockquote>
+					</div>
+				</div>
+			<br>
+			<div class="bg-gray-100 rounded-xl flex justify-between">
+					<div class="w-full p-4">
+						<p class="text-yellow-600 ml-2">Demo session</p>
+						<blockquote class="my-2"><p class="text-lg font-semibold">Ask the team in charge of the project to screencast the app’s demo</p></blockquote>
+					</div>
+				</div>
+			<script type="text/javascript">
+				function onSubmit( form ){
+					var data = $(form).serializeArray();
+					var formObject = { profile : {} };
+					$.each(data,
+					    function(i, v) {
+					        formObject.profile[v.name] = v.value;
+					    });
+					$.ajax({
+					    type: 'POST',
+					    url: '/',
+					    data: JSON.stringify(formObject),
+					    success: function(data, textStatus, jqXHR) { 
+					    	document.write(jqXHR.responseText); 
+					    },
+					    contentType: "application/json",
+					    dataType: 'html'
+					});
+					return false; 
+				}
+			</script>
+			{{/if}}
+		</section>
+		
+	</section>
+</section>

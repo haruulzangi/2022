@@ -1,0 +1,10 @@
+services:
+  todo:
+    build: .
+    ports: 
+      - "9911:9911"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.todo.rule=Host(todo.challenge.haruulzangi.mn)"
+      - "traefik.http.routers.todo.entrypoints=websecure"
+      - "traefik.http.routers.todo.tls.certresolver=myresolver"
