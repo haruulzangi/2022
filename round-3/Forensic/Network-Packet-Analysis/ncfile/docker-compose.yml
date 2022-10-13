@@ -1,0 +1,14 @@
+version: '2.0'
+services: 
+  pcap:
+    build: 
+      context: .
+    ports:
+      - "11331:11331"
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pcap.rule=Host(`pcap.challenge.haruulzangi.mn`)"
+      - "traefik.http.routers.pcap.entrypoints=websecure"
+      - "traefik.http.routers.pcap.tls.certresolver=myresolver"
+
