@@ -1,4 +1,4 @@
-# “round-1/Forensics/[Twins](https://github.com/haruulzangi/2022/tree/main/round-1/Forensic/Twins)” даалгаврын writeup
+# “[Twins](https://github.com/haruulzangi/2022/tree/main/round-1/Forensic/Twins)” даалгаврын writeup
 
 “Twins” буюу ихрүүд гэсэн үгнээс давхардсан агуулгатай файл юм уу мөрийг хайх санаа төрсөн. Давхардсан мөр ганцхан байсан нь: `VU17WkB4M19MMGhlX0dlMGhvIXJfJHZ6YyFsfQ==`.
 
